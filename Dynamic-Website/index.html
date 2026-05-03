@@ -216,19 +216,19 @@
     border-radius: 50%;
     background: var(--bg2);
   }
-  .avatar-img {
-    position: absolute; inset: 6px; z-index: 1;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #2a2a3a, #1a1a28);
-    display: flex; align-items: center; justify-content: center;
-    font-family: var(--font-head);
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: var(--accent);
-    letter-spacing: -0.05em;
-    overflow: hidden;
-  }
-
+.avatar-img {
+  position: absolute;
+  inset: 6px;
+  z-index: 1;
+  width: calc(100% - 12px);
+  height: calc(100% - 12px);
+  border-radius: 50%;
+  object-fit: cover;   /* 🔥 THIS fixes fitting */
+  display: block;
+}  
+.avatar-ring::after {
+  inset: 4px; /* instead of 2px */
+}
   .open-badge {
     background: rgba(67,233,123,0.1);
     border: 1px solid rgba(67,233,123,0.25);
@@ -598,9 +598,10 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="avatar-ring">
-        <div class="avatar-img">SB</div>
-      </div>
+  <div class="avatar-ring">
+    <img class="avatar-img" src="https://avatars.githubusercontent.com/u/106992856?v=4" alt="Avatar">
+  </div>
+</div>
       <div class="open-badge">Available for opportunities</div>
       <div class="stats-row">
         <div class="stat-item">
@@ -789,15 +790,15 @@
   <p class="section-sub">Academic foundation combining IT management strategy with electronics engineering fundamentals.</p>
   <div class="timeline">
     <div class="timeline-item">
-      <div class="timeline-date">2022 — 2024</div>
+      <div class="timeline-date">2023 — 2025</div>
       <div class="timeline-content">
-        <div class="timeline-org">VistaDigit</div>
+        <div class="timeline-org">University of Kalyani</div>
         <div class="timeline-title">MBA — Information Technology</div>
         <div class="timeline-desc">Specialized in IT management, business analytics, data-driven strategy, and enterprise systems. Developed strong foundation in applying analytical thinking to business problems.</div>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2018 — 2022</div>
+      <div class="timeline-date">2019 — 2023</div>
       <div class="timeline-content">
         <div class="timeline-org">University of Kalyani</div>
         <div class="timeline-title">BTech — Electronics & Communication Engineering</div>
@@ -805,10 +806,10 @@
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2024 — Present</div>
+      <div class="timeline-date">2025 — Present</div>
       <div class="timeline-content">
-        <div class="timeline-org">Self-directed</div>
-        <div class="timeline-title">Data Analytics Practice</div>
+        <div class="timeline-org">Vista Digit</div>
+        <div class="timeline-title">Business Analytics Intern</div>
         <div class="timeline-desc">Building a portfolio of analytical projects spanning e-commerce, healthcare, and finance. Maintaining a technical blog at sontuball.blogspot.com with 500+ LinkedIn connections.</div>
       </div>
     </div>
@@ -836,7 +837,7 @@
           <div class="contact-link-icon">GH</div>
           <div class="contact-link-info">
             <div class="contact-link-title">GitHub</div>
-            <div class="contact-link-val">See all my projects</div>
+            <div class="contact-link-val">https://github.com/SONTUBALL</div>
           </div>
         </a>
         <a href="https://sontuball.blogspot.com" target="_blank" class="contact-link">
